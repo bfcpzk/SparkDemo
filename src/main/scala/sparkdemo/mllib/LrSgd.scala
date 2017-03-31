@@ -12,11 +12,11 @@ import scala.collection.mutable.ArrayBuffer
   */
 object LrSgd {
   def main(args : Array[String]): Unit ={
-    //屏蔽日志
+    //屏蔽日志,可以不变
     Logger.getLogger("org.apache.spark").setLevel(Level.WARN)
     Logger.getLogger("org.eclipse.jetty.server").setLevel(Level.OFF)
 
-    //设置运行环境
+    //设置运行环境,只需要改变app名字,作业任务名
     val conf = new SparkConf().setAppName("LrSgd").setMaster("local[4]")
     val sc = new SparkContext(conf)
 
